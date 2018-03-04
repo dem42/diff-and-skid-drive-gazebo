@@ -16,26 +16,26 @@
     <pose>0 0 0.5 0 0 0</pose>
 
     <inertial>
-      <mass value="5.0"/>
+      <mass value="10.0"/>
       <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
       <inertia
-          ixx="0.1" ixy="0" ixz="0"
-          iyy="0.1" iyz="0"
-          izz="0.1"
+          ixx="1.0" ixy="0" ixz="0"
+          iyy="1.0" iyz="0"
+          izz="1.0"
       />
     </inertial>
 
     <collision name='collision'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
-        <box size=".8 .2 .02"/>
+        <box size=".22 .2 .1"/>
       </geometry>
     </collision>
 
     <visual name='chassis_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <box size=".8 .2 .02"/>
+        <box size=".22 .2 .1"/>
       </geometry>
     </visual>
 
@@ -62,10 +62,10 @@
       <surface>
         <friction>
           <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
+            <mu>0.0</mu>
+            <mu2>0.0</mu2>
+	    <slip1>1.0</slip1>
+	    <slip2>1.0</slip2>
           </ode>
         </friction>
       </surface>
@@ -80,7 +80,7 @@
   </link>
 
   <joint type="continuous" name="front_right_wheel_hinge">
-    <origin xyz="0.3 -0.15 0" rpy="0 0 0"/>
+    <origin xyz="0.11 -0.15 0" rpy="0 0 0"/>
     <child link="front_right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -109,10 +109,10 @@
       <surface>
         <friction>
           <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
+            <mu>0.0</mu>
+            <mu2>0.0</mu2>
+	    <slip1>1.0</slip1>
+	    <slip2>1.0</slip2>
           </ode>
         </friction>
       </surface>
@@ -127,7 +127,7 @@
   </link>
 
   <joint type="continuous" name="front_left_wheel_hinge">
-    <origin xyz="0.3 0.15 0" rpy="0 0 0"/>
+    <origin xyz="0.11 0.15 0" rpy="0 0 0"/>
     <child link="front_left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -156,10 +156,10 @@
       <surface>
         <friction>
           <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
+            <mu>0.0</mu>
+            <mu2>0.0</mu2>
+	    <slip1>1.0</slip1>
+	    <slip2>1.0</slip2>
           </ode>
         </friction>
       </surface>
@@ -174,7 +174,7 @@
   </link>
 
   <joint type="continuous" name="back_right_wheel_hinge">
-    <origin xyz="-0.3 -0.15 0" rpy="0 0 0"/>
+    <origin xyz="-0.11 -0.15 0" rpy="0 0 0"/>
     <child link="back_right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -203,10 +203,10 @@
       <surface>
         <friction>
           <ode>
-            <mu>0</mu>
-            <mu2>0</mu2>
-            <slip1>1.0</slip1>
-            <slip2>1.0</slip2>
+            <mu>0.0</mu>
+            <mu2>0.0</mu2>
+	    <slip1>1.0</slip1>
+	    <slip2>1.0</slip2>
           </ode>
         </friction>
       </surface>
@@ -221,7 +221,7 @@
   </link>
 
   <joint type="continuous" name="back_left_wheel_hinge">
-    <origin xyz="-0.3 0.15 0" rpy="0 0 0"/>
+    <origin xyz="-0.11 0.15 0" rpy="0 0 0"/>
     <child link="back_left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -258,7 +258,7 @@
   </link>
 
   <joint type="fixed" name="camera_joint">
-    <origin xyz="0.4 0 0" rpy="0 0 0"/>
+    <origin xyz="0.11 0 0" rpy="0 0 0"/>
     <child link="camera"/>
     <parent link="chassis"/>
   </joint>
@@ -291,7 +291,7 @@
   </link>
 
   <joint type="fixed" name="hokuyo_joint">
-    <origin xyz="0.35 0 0.02" rpy="0 0 0"/>
+    <origin xyz="0.1 0 0.1" rpy="0 0 0"/>
     <child link="hokuyo"/>
     <parent link="chassis"/>
   </joint>
